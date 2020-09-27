@@ -1,7 +1,7 @@
 # Nama  : Kefilino Khalifa Filardi
 # NPM   : 140810180028
 # Tgl   : 2020.09.23
-# Desc  : Program untuk enkripsi menggunakan Hill Cipher
+# Desc  : Program untuk enkripsi menggunakan Hill Cipher dan mencari kunci dari Hill Cipher
 
 import numpy as np
 
@@ -107,29 +107,40 @@ def hill_key(x, y) :
 
     k = np.dot((int(mod_inverse(round(np.linalg.det(mx)), 26)) * adj.astype(int) % 26), my) % 26
 
+    return k
+
+def encrypt_() :
+    k = []
+    x = input("Kalimat yang akan dienkripsi\t: ")
+    rc = int(input("Jumlah Baris/Kolom Kunci K\t: "))
+
+    print("Masukkan Nilai Matriks Kunci K (baris ke kolom)\t: ")
+    for i in range(rc) :
+        m = []
+        for j in range(rc) :
+            m.append(int(input()))
+        k.append(m)
+    mk = np.array(k)
+
+    y = encrypt(x, mk)
+    x = decrypt(y, mk)
+
+    print("\nPlaintext setelah dienkripsi\t: " + y)
+    print("Ciphertext setelah didekripsi\t: " + x)
+
+def searchkey() : 
+    x = input("Plaintext\t: ")
+    y = input("Ciphertext\t: ")
+    k = hill_key(x, y)
+
+    print("\nKey Hill Cipher adalah\t: ")
     print(k)
-    return 1
 
-x = input("Plaintext\t: ")
-y = input("Ciphertext\t: ")
 
-print("\nKey Hill Cipher adalah\t: ")
-k = hill_key(x, y)
-
-# k = []
-# x = input("Kalimat yang akan dienkripsi\t: ")
-# rc = int(input("Jumlah Baris/Kolom Kunci K\t: "))
-
-# print("Masukkan Nilai Matriks Kunci K (baris ke kolom)\t: ")
-# for i in range(rc) :
-#     m = []
-#     for j in range(rc) :
-#         m.append(int(input()))
-#     k.append(m)
-# mk = np.array(k)
-
-# y = encrypt(x, mk)
-# x = decrypt(y, mk)
-
-# print("\nPlaintext setelah dienkripsi\t: " + y)
-# print("Ciphertext setelah didekripsi\t: " + x)
+pil = int(input("1. Enkripsi\n2. Cari Kunci Hill Cipher\n\nPilihan : "))
+if pil == 1 :
+    encrypt_()
+elif pil == 2 :
+    searchkey()
+else :
+    print("Input salah.")
