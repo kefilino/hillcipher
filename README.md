@@ -1,4 +1,4 @@
-# Tugas Pertemuan ke-2 Praktikum Kriptografi
+# Tugas Pertemuan ke-3 Praktikum Kriptografi
 ### Anggota-1
 Nama    : Bunga Azizha Nurhaliza  
 NPM     : 140810180016  
@@ -15,6 +15,6 @@ NPM     : 140810180032
 Kelas   : A  
   
 
-**Program Hill Cipher**  
+**Screenshot Program Hill Cipher**  
 ![Screenshot Enkripsi](https://cdn.discordapp.com/attachments/733341377924169739/759777256490008617/unknown.png)
 ![Screenshot Cari Kunci](https://cdn.discordapp.com/attachments/733341377924169739/759777362669207572/unknown.png)
